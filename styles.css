@@ -88,3 +88,51 @@ main {
 .RSVP-invite-link {
 	font-weight: 100;
 }
+
+.wedding-grid-main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.img-eiffel {
+  height: 100vh;
+  justify-self: center;
+}
+
+.wedding-desc-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+	font-size: calc(7px + 2vw);
+	text-align: justify;
+}
+
+.wedding-detail-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.wedding-detail-title {
+  font-size: calc(9px + 1.5vw);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+  color: black;
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.wedding-detail-title-time {
+  font-size: calc(9px + 1.5vw);
+  font-family: "Work Sans", sans-serif;
+  font-weight: 800;
+  color: black;
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+.testtesttest {
+  display: flex;
+  flex-direction: row;
+}
