@@ -33,11 +33,25 @@
                     </i>
                 </div>
               </div>
-              <div class="wedding-detail-grid">
-                <div class="testtesttest">
-                  <h3 class="wedding-detail-title">ARRIVAL  </h3>
-                  <h5 class="wedding-detail-title-time"> 1:30PM</h5>
+              <div class="wedding-arrival">
+                <h2>ARRIVAL BY <strong>1:30PM</strong></h2>
+                <p>Santino</p>
+                <p>14 London Road</p>
+                <p>Kilmarnock</p>
+                <p>KA3 7AD</p>
+              </div>
+              <div class="wedding-timeline">
+                <div class="timeline-section">
+                  <p><strong>CEREMONY</strong></p>
+                  <p>2:00PM – 3:00PM</p>
                 </div>
+                <div class="timeline-section">
+                  <p><strong>PHOTOS</strong></p>
+                  <p>3:00PM – 3:45PM</p>
+                </div>
+                <div class="timeline-section">
+                  <p><strong>MEAL / RECEPTION</strong></p>
+                  <p>4:00PM – Late!</p>
               </div>
             </div>
           </div>
