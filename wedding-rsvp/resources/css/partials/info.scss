@@ -105,7 +105,6 @@
             }
 
             &:last-child {
-                border-right: none;
 
                 @media (max-width: 767px) {
                     border-right: 1px solid $text;
