@@ -4,7 +4,11 @@
 
         <input type="checkbox" id="nav-toggle" class="nav-toggle">
         <label for="nav-toggle" class="nav-toggle-label">
-            <span></span>
+            <svg viewBox="0 0 100 100">
+                <path class="line top" d="M 20,30 H 80" />
+                <path class="line middle" d="M 20,50 H 80" />
+                <path class="line bottom" d="M 20,70 H 80" />
+            </svg>
         </label>
 
         <ul class="navbar-links">
