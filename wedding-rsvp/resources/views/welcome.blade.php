@@ -5,13 +5,15 @@
 @section('content')
     <section class="hero">
         <h1 class="hero-hearts">❤❤</h1>
-        <h1 class="hero-names">
-            Alex M<sup>c</sup>Caughran<br> — and — <br>Candace Scoular
-        </h1>
-        <div class="hero-details" id="info">
-            FRIDAY 1ˢᵗ AUGUST 2025<br>
-            <a href="#">FENWICK HOTEL</a><br>
-            Arrival by 1:30pm
+        <div class="hero-name-detail-wrapper">
+            <h1 class="hero-names">
+                Alex M<sup>c</sup>Caughran<br> — and — <br>Candace Scoular
+            </h1>
+            <div class="hero-details" id="info">
+                FRIDAY 1ˢᵗ AUGUST 2025<br>
+                <a href="#">FENWICK HOTEL</a><br>
+                Arrival by 1:30pm
+            </div>
         </div>
     </section>
 
