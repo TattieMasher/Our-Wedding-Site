@@ -1,39 +1,81 @@
 .navbar {
+    background: white;
+    border-bottom: 1px solid #eee;
     position: sticky;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #f8f8f8;
-    border-bottom: 1px solid #ddd;
+    top: 0;
+    z-index: 10;
+
+    .navbar-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        max-width: 1270px;
+        margin: 0 auto;
+    }
 
     .navbar-brand {
-        font-family: "EB Garamond", serif;
-        font-weight: bold;
-        font-size: 5rem;
-        text-decoration: none;
+        font-family: $serif-font;
+        font-size: 2.5rem;
         color: $text;
+        text-decoration: none;
     }
 
     .navbar-links {
-        list-style: none;
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
+        list-style: none;
 
         li a {
             text-decoration: none;
             color: #555;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1rem;
+            gap: 1rem;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
         }
     }
 
-    @media (max-width: 600px) {
-        flex-direction: column;
-        align-items: flex-start;
+    .nav-toggle {
+        display: none;
+    }
 
+    .nav-toggle-label {
+        display: none;
+        cursor: pointer;
+
+        span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: $text;
+            margin-bottom: 5px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    .nav-toggle:checked ~ .navbar-links {
+        display: flex;
+    }
+
+    @media (max-width: 768px) {
         .navbar-links {
             flex-direction: column;
-            gap: 0.5rem;
-            width: 100%;
         }
     }
 }
