@@ -4,19 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Household;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
 
 class RSVPController extends Controller
 {
     public function show($token)
     {
-        $household = Household::with('guests')->where('token', $token)->firstOrFail();
+        $household = Household::with('guests')->where('token', $token)->first();
+
+        if (!$household) {
+            return redirect()->route('home');
+        }
+
         return view('rsvp.form', compact('household'));
     }
 
     public function submit(Request $request, $token)
     {
-        $household = Household::with('guests')->where('token', $token)->firstOrFail();
+        $household = Household::with('guests')->where('token', $token)->first();
+
+        if (!$household) {
+            return redirect()->route('home');
+        }
 
         foreach ($household->guests as $guest) {
             $guest->update([

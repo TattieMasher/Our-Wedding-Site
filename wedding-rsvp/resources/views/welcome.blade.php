@@ -3,8 +3,6 @@
 @section('title', 'Alex & Candace')
 
 @section('content')
-    <h1>Welcome to Our Wedding!</h1>
-
     <main>
         <header>
             <h1 class="header-hearts">
