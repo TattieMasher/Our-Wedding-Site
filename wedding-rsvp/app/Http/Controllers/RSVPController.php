@@ -15,7 +15,7 @@ class RSVPController extends Controller
             return redirect()->route('home');
         }
 
-        return view('rsvp.form', compact('household'));
+        return view('welcome', compact('household'));
     }
 
     public function submit(Request $request, $token)

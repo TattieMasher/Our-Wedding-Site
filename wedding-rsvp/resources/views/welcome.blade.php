@@ -4,14 +4,9 @@
 
 @section('content')
     <section class="hero">
-        <h1 class="hero-hearts">
-            <span class="material-symbols-outlined">favorite</span>
-            <span class="material-symbols-outlined">favorite</span>
-        </h1>
+        <h1 class="hero-hearts">❤❤</h1>
         <h1 class="hero-names">
-            Alex M<sup>c</sup>Caughran
-            <br> — and — <br>
-            Candace Scoular
+            Alex M<sup>c</sup>Caughran<br> — and — <br>Candace Scoular
         </h1>
         <div class="hero-details" id="info">
             FRIDAY 1ˢᵗ AUGUST 2025<br>
@@ -22,6 +17,13 @@
 
     <section class="rsvp-invite" id="rsvp">
         <p>We request the pleasure of your company as we celebrate our love.</p>
-        <a class="rsvp-button" href="#qr">Please let us know if you can attend (RSVP)</a>
+        <a class="rsvp-button" href="#rsvp-form">Please let us know if you can attend (RSVP)</a>
     </section>
+
+    @isset($household)
+        <section class="rsvp-form-section" id="rsvp-form">
+            <h2>RSVP for {{ $household->name }}</h2>
+            @include('rsvp.form-fields', ['household' => $household])
+        </section>
+    @endisset
 @endsection
