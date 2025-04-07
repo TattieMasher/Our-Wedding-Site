@@ -4,13 +4,22 @@
 @import 'partials/hero';
 @import 'partials/rsvp';
 
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: $serif-font;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     background-color: $background;
     color: $text;
+
+    @media (max-width: 600px) {
+        font-size: 16px;
+    }
 }
 
 main.container {

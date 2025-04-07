@@ -16,10 +16,10 @@
                 Arrival by 1:30pm
             </div>
         </div>
+    </section>
 
-        <section class="hero-photo">
-            <img src="/img/img.jpg" alt="Alex & Candace" />
-        </section>
+    <section class="hero-photo">
+        <img src="/img/img.jpg" alt="Alex & Candace" />
     </section>
 
     <section class="rsvp-invite" id="rsvp">

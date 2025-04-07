@@ -1,23 +1,60 @@
-.rsvp-invite {
-    text-align: center;
-    padding: 2rem 1rem;
+.rsvp-form-section {
+    background: #fff;
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    max-width: 700px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 
-    p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
+    h2 {
+        text-align: center;
+        font-family: $serif-font;
+        color: $text;
+        margin-bottom: 2rem;
+        font-size: 2rem;
     }
 
-    .rsvp-button {
-        display: inline-block;
-        padding: 0.75rem 1.25rem;
-        background-color: #222;
-        color: white;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        font-weight: bold;
-    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
 
-    .rsvp-button:hover {
-        background-color: #444;
+        div {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1rem;
+        }
+
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        textarea,
+        input[type="text"] {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.4rem;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        button {
+            align-self: center;
+            background-color: $text;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darken($text, 10%);
+        }
     }
 }
