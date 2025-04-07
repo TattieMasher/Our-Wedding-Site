@@ -4,6 +4,17 @@
 @import 'partials/hero';
 @import 'partials/rsvp';
 
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 html {
     box-sizing: border-box;
     font-size: 100%;
@@ -27,6 +38,7 @@ main.container {
     padding: 1rem;
     max-width: 1270px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 header {
