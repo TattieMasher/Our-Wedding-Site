@@ -3,25 +3,22 @@
 @section('title', 'Alex & Candace')
 
 @section('content')
-    <main>
-        <header>
-            <h1 class="header-hearts">
-                ❤❤
-            </h1>
-            <h1 class="main-header">
-                Alex M<sup>c</sup>Caughran
-                <br> — and — <br>
-                Candace Scoular
-            </h1>
-            <div class="index-details-block">
-                FRIDAY 1ˢᵗ AUGUST 2025<br>
-                SANTINO KILMARNOCK<br>
-                Arrival by 1:30pm<br>
-            </div>
-        </header>
-        <div class="index-RSVP-invitation">
-        We request the pleasure of your company as we celebrate our love.<br><br>
-        <a class="RSVP-invite-link" href="">Please let us know if you can attend (RSVP)</a>
+    <section class="hero">
+        <h1 class="hero-hearts">❤❤</h1>
+        <h1 class="hero-names">
+            Alex M<sup>c</sup>Caughran
+            <br> — and — <br>
+            Candace Scoular
+        </h1>
+        <div class="hero-details" id="info">
+            FRIDAY 1ˢᵗ AUGUST 2025<br>
+            <a href="#">FENWICK HOTEL</a><br>
+            Arrival by 1:30pm
         </div>
-    </main>
+    </section>
+
+    <section class="rsvp-invite" id="rsvp">
+        <p>We request the pleasure of your company as we celebrate our love.</p>
+        <a class="rsvp-button" href="#qr">Please let us know if you can attend (RSVP)</a>
+    </section>
 @endsection
