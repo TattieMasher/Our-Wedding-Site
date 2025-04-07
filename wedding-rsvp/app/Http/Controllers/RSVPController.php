@@ -1,7 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use App\Models\Household;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class RSVPController extends Controller
 {

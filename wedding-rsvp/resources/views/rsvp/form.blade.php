@@ -35,4 +35,9 @@
             <div>
                 <input type="text" name="song_requests[{{ $i }}][title]" placeholder="Song Title">
                 <input type="text" name="song_requests[{{ $i }}][artist]" placeholder="Artist (optional)">
-            </div
+            </div>
+        @endfor
+
+        <button type="submit">Submit RSVP</button>
+    </form>
+@endsection
