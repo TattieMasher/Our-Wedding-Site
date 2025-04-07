@@ -56,7 +56,7 @@
     </section>
 
     <section class="hero-photo">
-        <img src="/img/img.jpg" alt="Alex & Candace" />
+        <img src="/img/img2.jpg" alt="Alex & Candace" />
     </section>
 
     <section class="rsvp-invite" id="rsvp">

@@ -3,6 +3,7 @@
 
     .hero-hearts {
         font-size: 2rem;
+        margin-top: 0px;
         margin-bottom: 1rem;
     }
 
@@ -67,8 +68,13 @@
     align-items: center;
     flex-direction: column;
     margin: 2rem auto;
+    margin-top: 0px;
     padding: 0 1rem;
     text-align: center;
+
+    p {
+        margin: -1rem 0 2rem 0;
+    }
 
     .rsvp-invite-text {
         font-size: 2rem;
@@ -86,6 +92,7 @@
         border: none;
         border-radius: 0.5rem;
         cursor: pointer;
+        text-decoration: none;
 
         &:hover {
             background-color: darken($text, 10%);
