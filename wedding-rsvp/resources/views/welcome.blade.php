@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Alex & Candace')
+@section('title', 'Alex & Candace - Fenwick Hotel')
 
 @section('content')
     <script>
@@ -26,7 +26,7 @@
             origin: {
             x: Math.random(),
             // since particles fall down, skew start toward the top
-            y: Math.random() * skew - 0.2,
+            y: Math.random() * skew + 0.1,
             },
             colors: ["FFC0CB", "FF69B4", "FF1493", "C71585"],
             shapes: ["heart"],

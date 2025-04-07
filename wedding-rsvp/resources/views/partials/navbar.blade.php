@@ -13,7 +13,7 @@
 
         <ul class="navbar-links">
             <li><a href="{{ route('home') }}">Home</a></li>
-            <li><a href="#info">Info</a></li>
+            <li><a href="{{ route('info') }}">Info</a></li>
             <li><a href="#rsvp">RSVP</a></li>
         </ul>
     </div>

@@ -7,9 +7,6 @@
     }
 
     .hero-name-detail-wrapper {
-        // border-top: 1px solid $text;
-        // border-bottom: 1px solid $text;
-
         &:before,
         &:after {
             content: "";
@@ -24,7 +21,7 @@
             font-size: 3rem;
             font-family: $serif-font;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-top: 1rem;
         }
 
         .hero-details {

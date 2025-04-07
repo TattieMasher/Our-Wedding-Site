@@ -2,6 +2,7 @@
 
 @import 'partials/navbar';
 @import 'partials/hero';
+@import 'partials/info';
 @import 'partials/rsvp';
 
 * {
@@ -17,20 +18,20 @@ html, body {
 
 html {
     box-sizing: border-box;
-    font-size: 100%;
     scroll-behavior: smooth;
-}
 
-body {
-    font-family: $serif-font;
     font-size: 20px;
-    font-weight: 600;
-    background-color: $background;
-    color: $text;
 
     @media (max-width: 600px) {
         font-size: 18px;
     }
+}
+
+body {
+    font-family: $serif-font;
+    font-weight: 600;
+    background-color: $background;
+    color: $text;
 }
 
 main.container {

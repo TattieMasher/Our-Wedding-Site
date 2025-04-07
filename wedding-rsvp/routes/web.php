@@ -5,6 +5,7 @@ use App\Http\Controllers\RSVPController;
 use App\Models\Household;
 
 Route::get('/', fn () => view('welcome'))->name('home');
+Route::get('/info', fn () => view('info'))->name('info');
 
 // Redirect /rsvp with no token → homepage
 Route::get('/rsvp', fn () => redirect()->route('home'));
