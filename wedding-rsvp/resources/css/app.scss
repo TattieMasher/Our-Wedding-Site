@@ -13,9 +13,11 @@ body {
     color: $text;
 }
 
-main {
+main.container {
     margin: auto;
+    padding: 1rem;
     max-width: 1270px;
+    width: 100%;
 }
 
 header {

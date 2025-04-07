@@ -5,6 +5,7 @@
 @section('content')
     <section class="hero">
         <h1 class="hero-hearts">❤❤</h1>
+
         <div class="hero-name-detail-wrapper">
             <h1 class="hero-names">
                 Alex M<sup>c</sup>Caughran<br> — and — <br>Candace Scoular
@@ -15,6 +16,10 @@
                 Arrival by 1:30pm
             </div>
         </div>
+
+        <section class="hero-photo">
+            <img src="/img/img.jpg" alt="Alex & Candace" />
+        </section>
     </section>
 
     <section class="rsvp-invite" id="rsvp">
