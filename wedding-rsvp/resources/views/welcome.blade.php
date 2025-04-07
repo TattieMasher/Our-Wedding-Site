@@ -4,7 +4,10 @@
 
 @section('content')
     <section class="hero">
-        <h1 class="hero-hearts">❤❤</h1>
+        <h1 class="hero-hearts">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="material-symbols-outlined">favorite</span>
+        </h1>
         <h1 class="hero-names">
             Alex M<sup>c</sup>Caughran
             <br> — and — <br>
