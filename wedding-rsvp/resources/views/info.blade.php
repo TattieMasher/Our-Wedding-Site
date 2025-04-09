@@ -12,7 +12,7 @@
             <p>Our wedding will be held on <strong><u>Friday, 1st August, 2025 at 2pm</u></strong>.</p>
             <p>Please join us for our ceremony, a lovely meal, drinks, chats and dances!</p>
             <p><strong><em><u>No</u> dress code.</em></strong></p>
-            <p><em>Just wear what makes you feel best!</em></p>
+            <p>Just wear what makes you feel best!</p>
         </div>
     </div>
 

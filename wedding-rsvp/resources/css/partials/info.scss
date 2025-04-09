@@ -60,6 +60,15 @@
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
             color: $text;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 25%;
+                height: 1px;
+                background-color: $text;
+                margin: 0.2rem auto;
+            }
         }
 
         p {
