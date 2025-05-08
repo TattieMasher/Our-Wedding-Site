@@ -27,7 +27,7 @@
     form {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 0.75rem;
 
         div {
             border-bottom: 1px solid #ccc;
@@ -67,4 +67,44 @@
             background-color: darken($text, 10%);
         }
     }
+
+    .guest-section {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        h3 {
+            margin-bottom: 0.5rem;
+            color: $text;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .contact-section {
+        h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="email"],
+        input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 0.4rem;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+        }
+    }
+
 }
