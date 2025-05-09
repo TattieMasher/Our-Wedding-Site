@@ -39,6 +39,12 @@ class RegistryController extends Controller
         return view('registry.checkout', compact('cart', 'total'));
     }
 
+    public function clearCart()
+    {
+        session()->forget('cart');
+        return redirect()->route('registry.index');
+    }
+
     public function submitContribution(Request $request)
     {
         $validated = $request->validate([

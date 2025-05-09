@@ -13,65 +13,73 @@ class GiftRegistry extends Component
         $this->gifts = [
             'Honeymoon' => [
                 [
-                    'title' => 'Round-Trip Airfare',
+                    'title' => 'Dinner Date',
                     'description' => 'Our international flights to Greece and back',
-                    'price' => 200,
-                    'remaining' => 10,
-                    'image' => asset('images/airfare.jpg'),
+                    'price' => 60,
+                    'image' => asset('images/dinner.jpg'),
                 ],
                 [
-                    'title' => 'Hotel Accommodations',
-                    'description' => 'We’ll be staying at lovely seaside resorts',
+                    'title' => 'Other stuff?',
+                    'description' => 'We\'ll be staying at lovely seaside resorts',
                     'price' => 175,
-                    'remaining' => 8,
                     'image' => asset('images/hotel.jpg'),
                 ],
             ],
             'House Fund' => [
                 [
                     'title' => 'Living Room Furniture',
-                    'description' => 'Help us make our new flat a home',
+                    'description' => 'Desc',
                     'price' => 150,
-                    'remaining' => 5,
                     'image' => asset('images/sofa.jpg'),
                 ],
                 [
-                    'title' => 'Kitchen Appliances',
-                    'description' => 'We’re dreaming of that air fryer life',
-                    'price' => 75,
-                    'remaining' => 6,
-                    'image' => asset('images/kitchen.jpg'),
+                    'title' => 'Home Deposit Contribution',
+                    'description' => 'Help us greatly with a contribution towards our first home',
+                    'price' => 150,
+                    'image' => asset('images/sofa.jpg'),
                 ],
             ],
             'Wedding Costs' => [
                 [
-                    'title' => 'Photography Package',
-                    'description' => 'Capturing the day forever',
-                    'price' => 120,
-                    'remaining' => 2,
+                    'title' => 'Photographer',
+                    'description' => 'Help us Capture the moment!',
+                    'price' => 50,
                     'image' => asset('images/photographer.jpg'),
                 ],
             ],
             'Just Because' => [
                 [
                     'title' => 'Surprise Us!',
-                    'description' => 'A little treat from you to us ❤️',
+                    'description' => 'Rando Orlando',
                     'price' => 20,
-                    'remaining' => 20,
                     'image' => asset('images/surprise.jpg'),
                 ],
             ],
         ];
     }
 
-    public function addToCart($index, $quantity = 1)
+    public function addToCart($title, $quantity = 1)
     {
-        $gift = $this->gifts[$index];
+        $foundGift = null;
+
+        foreach ($this->gifts as $category => $group) {
+            foreach ($group as $gift) {
+                if ($gift['title'] === $title) {
+                    $foundGift = $gift;
+                    break 2;
+                }
+            }
+        }
+
+        if (!$foundGift) {
+            return;
+        }
+
         $cart = session()->get('cart', []);
-        $key = $gift['title'];
+        $key = $foundGift['title'];
 
         if (!isset($cart[$key])) {
-            $cart[$key] = $gift;
+            $cart[$key] = $foundGift;
             $cart[$key]['quantity'] = $quantity;
         } else {
             $cart[$key]['quantity'] += $quantity;

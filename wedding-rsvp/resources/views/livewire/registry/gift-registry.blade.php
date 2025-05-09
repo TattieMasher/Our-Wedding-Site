@@ -14,7 +14,7 @@
                         <h4>{{ $gift['title'] }}</h4>
                         <p class="description">{{ $gift['description'] }}</p>
                         <p class="price">£{{ $gift['price'] }}</p>
-                        <button wire:click="addToCart('{{ $gift['title'] }}')" class="add-to-cart">Add to Cart</button>
+                        <button wire:click="addToCart('{{ $gift['title'] }}')" class="add-to-cart">Add Gift</button>
                     </div>
                 @endforeach
             </div>
@@ -27,4 +27,10 @@
             <span class="cart-badge">{{ $this->cartCount }}</span>
         @endif
     </a>
+
+    @if ($this->cartCount)
+        <button wire:click="clearCart" class="clear-cart-button">
+            Clear Selection
+        </button>
+    @endif
 </div>

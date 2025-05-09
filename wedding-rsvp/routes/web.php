@@ -27,3 +27,4 @@ Route::get('/gifts', [RegistryController::class, 'index'])->name('registry.index
 Route::post('/cart/add', [RegistryController::class, 'addToCart'])->name('cart.add');
 Route::get('/checkout', [RegistryController::class, 'checkout'])->name('registry.checkout');
 Route::post('/checkout/submit', [RegistryController::class, 'submitContribution'])->name('registry.submit');
+Route::get('/checkout/clear', [RegistryController::class, 'clearCart'])->name('registry.clear');

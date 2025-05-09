@@ -1,143 +1,145 @@
 .gift-intro {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 1.2rem;
-    max-width: 700px;
+    font-size: 1.1rem;
+    max-width: 650px;
     margin-inline: auto;
+    line-height: 1.6;
   }
 
-  .category-block {
-    margin-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.category-block {
+margin-bottom: 3rem;
+display: flex;
+flex-direction: column;
+align-items: center;
 
-    .gift-category {
-      font-size: 1.6rem;
-      font-family: $serif-font;
-      text-align: center;
-      margin-bottom: 2rem;
-      color: $text;
-      font-weight: bold;
-      position: relative;
-
-      &::after {
-        content: '';
-        display: block;
-        width: 60px;
-        height: 2px;
-        background: $text;
-        margin: 0.5rem auto 0;
-      }
-    }
-
-    .gift-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
-      justify-content: center;
-      gap: 2rem;
-      width: 100%;
-      max-width: 1100px;
-    }
-  }
-
-  .gift-card {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    padding: 1.25rem;
+.gift-category {
+    font-size: 1.4rem;
+    font-family: $serif-font;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    transition: transform 0.2s ease-in-out;
-    max-width: 340px;
-    margin-inline: auto;
-
-    &:hover {
-      transform: translateY(-4px);
-    }
-
-    img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 0.75rem;
-    }
-
-    h4 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin: 0.5rem 0;
-      color: $text;
-    }
-
-    .description {
-      font-size: 0.95rem;
-      color: #444;
-    }
-
-    .price,
-    .remaining {
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    .add-to-cart {
-      @extend .add-to-cart-button;
-    }
-  }
-
-  .floating-cart-button {
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    background: $text;
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 999px;
-    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: $text;
     font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-    transition: background 0.3s;
+    position: relative;
 
-    &:hover {
-      background: darken($text, 10%);
-    }
-
-    .cart-badge {
-      background: white;
-      color: $text;
-      font-weight: bold;
-      border-radius: 999px;
-      padding: 0.2rem 0.6rem;
-      font-size: 0.75rem;
-      margin-left: 0.5rem;
-      box-shadow: 0 0 0 2px $text;
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 480px) {
-      padding: 0.6rem 1.2rem;
-      font-size: 0.9rem;
-    }
-  }
-
-  // Reusable button style
-  .add-to-cart-button {
+    &::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
     background: $text;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
+    margin: 0.4rem auto 0;
+    }
+}
+
+.gift-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+}
+}
+
+.gift-card {
+background: white;
+border-radius: 0.75rem;
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+padding: 1rem;
+text-align: center;
+display: flex;
+flex-direction: column;
+gap: 0.4rem;
+transition: transform 0.2s ease-in-out;
+max-width: 300px;
+margin-inline: auto;
+
+&:hover {
+    transform: translateY(-3px);
+}
+
+img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
     border-radius: 0.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    font-family: $sans-serif-font;
-    cursor: pointer;
-    transition: background 0.3s ease;
+}
 
-    &:hover {
-      background: darken($text, 10%);
-    }
-  }
+h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0.25rem 0;
+    color: $text;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.price {
+    font-size: 0.9rem;
+    color: #777;
+    font-weight: 500;
+}
+
+.add-to-cart {
+    @extend .add-to-cart-button;
+    margin-top: 0.4rem;
+}
+}
+
+.floating-cart-button {
+position: fixed;
+bottom: 16px;
+right: 16px;
+background: $text;
+color: white;
+padding: 0.7rem 1.3rem;
+border-radius: 999px;
+font-size: 0.95rem;
+font-weight: bold;
+text-decoration: none;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+transition: background 0.3s;
+
+&:hover {
+    background: darken($text, 10%);
+}
+
+.cart-badge {
+    background: white;
+    color: $text;
+    font-weight: bold;
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    margin-left: 0.5rem;
+    box-shadow: 0 0 0 2px $text;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.9rem;
+}
+}
+
+.add-to-cart-button {
+background: $text;
+color: white;
+border: none;
+padding: 0.5rem 1rem;
+border-radius: 0.4rem;
+font-size: 0.95rem;
+font-weight: bold;
+font-family: $sans-serif-font;
+cursor: pointer;
+transition: background 0.3s ease;
+
+&:hover {
+    background: darken($text, 10%);
+}
+}

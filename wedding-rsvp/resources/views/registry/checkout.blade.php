@@ -31,5 +31,7 @@
             @endforeach
         </ul>
     </div>
+
+    <a href="{{ route('registry.clear') }}">asd</a>
 </div>
 @endsection
