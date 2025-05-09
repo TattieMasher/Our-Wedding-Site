@@ -22,5 +22,18 @@
     <code>
         {{ collect($cart)->map(fn($item) => "{$item['title']} (£" . ($item['price'] * $item['quantity']) . ")")->join(', ') }}
     </code>
+
+    <form method="POST" action="{{ route('registry.submit') }}" class="contribution-form">
+        @csrf
+
+        <input type="hidden" name="amount" value="{{ $total }}">
+        <input type="hidden" name="items" value="{{ json_encode($cart) }}">
+
+        <input type="text" name="name" placeholder="Your name (optional)">
+        <input type="email" name="email" placeholder="Your email (optional)">
+        <textarea name="message" placeholder="Gift message (optional)"></textarea>
+
+        <button type="submit" class="checkout-button">Send & Gift via PayPal</button>
+    </form>
 </div>
 @endsection
