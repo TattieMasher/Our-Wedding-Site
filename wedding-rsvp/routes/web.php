@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RegistryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RSVPController;
 use App\Models\Household;
@@ -19,3 +20,7 @@ Route::get('/admin/households', function () {
     $households = Household::all();
     return view('admin.households', compact('households'));
 });
+
+
+// TODO: Controller
+Route::get('/gifts', [RegistryController::class, 'index'])->name('registry.index');
