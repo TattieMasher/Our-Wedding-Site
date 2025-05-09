@@ -17,14 +17,21 @@
             <p class="price">£{{ $gift['price'] }}</p>
             <p class="remaining">{{ $gift['remaining'] }} remaining</p>
 
-            <div class="cart-controls">
-                <button>-</button>
-                <input type="number" value="1" min="1" max="{{ $gift['remaining'] }}">
-                <button>+</button>
-            </div>
+            <form method="POST" action="{{ route('cart.add') }}" class="add-to-cart-form">
+                @csrf
+                <input type="hidden" name="gift[title]" value="{{ $gift['title'] }}">
+                <input type="hidden" name="gift[description]" value="{{ $gift['description'] }}">
+                <input type="hidden" name="gift[price]" value="{{ $gift['price'] }}">
+                <input type="hidden" name="gift[image]" value="{{ $gift['image'] }}">
+                <input type="number" name="quantity" value="1" min="1" max="{{ $gift['remaining'] }}">
 
-            <button class="add-to-cart">Add to Cart</button>
+                <button type="submit" class="add-to-cart">Add to Cart</button>
+            </form>
         </div>
     @endforeach
 </div>
+
+<a href="{{ route('registry.checkout') }}" class="floating-cart-button">
+    View Cart & Checkout
+</a>
 @endsection

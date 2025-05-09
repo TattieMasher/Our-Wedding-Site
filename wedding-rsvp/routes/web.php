@@ -22,5 +22,7 @@ Route::get('/admin/households', function () {
 });
 
 
-// TODO: Controller
+// Registry stuff
 Route::get('/gifts', [RegistryController::class, 'index'])->name('registry.index');
+Route::post('/cart/add', [RegistryController::class, 'addToCart'])->name('cart.add');
+Route::get('/checkout', [RegistryController::class, 'checkout'])->name('registry.checkout');

@@ -34,4 +34,31 @@ class RegistryController extends Controller
 
         return view('registry.index', compact('gifts'));
     }
+
+    public function addToCart(Request $request)
+    {
+        $gift = $request->input('gift');
+        $quantity = (int) $request->input('quantity', 1);
+
+        $cart = session()->get('cart', []);
+        $key = $gift['title']; // Assuming titles are unique
+
+        if (!isset($cart[$key])) {
+            $cart[$key] = $gift;
+            $cart[$key]['quantity'] = $quantity;
+        } else {
+            $cart[$key]['quantity'] += $quantity;
+        }
+
+        session(['cart' => $cart]);
+
+        return redirect()->back()->with('success', 'Gift added!');
+    }
+
+    public function checkout()
+    {
+        $cart = session('cart', []);
+        $total = collect($cart)->sum(fn($item) => $item['price'] * $item['quantity']);
+        return view('registry.checkout', compact('cart', 'total'));
+    }
 }
