@@ -17,6 +17,19 @@
                         <button wire:click="addToCart('{{ $gift['title'] }}')" class="add-to-cart">Add Gift</button>
                     </div>
                 @endforeach
+                <div class="custom-gift-card">
+                    <h4>Custom Gift</h4>
+                    <p class="description">Want to give a different amount?</p>
+                    <form method="POST" action="{{ route('cart.add') }}">
+                        @csrf
+                        <input type="hidden" name="gift[title]" value="Custom Gift">
+                        <input type="hidden" name="gift[description]" value="A custom contribution">
+                        <input type="hidden" name="gift[image]" value="{{ asset('images/custom.jpg') }}">
+                        <input type="number" name="gift[price]" min="1" placeholder="£ amount" required>
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="add-to-cart-button">Add Custom Gift</button>
+                    </form>
+                </div>
             </div>
         </div>
     @endforeach
