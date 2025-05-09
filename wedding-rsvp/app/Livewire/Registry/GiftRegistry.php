@@ -11,26 +11,55 @@ class GiftRegistry extends Component
     public function mount()
     {
         $this->gifts = [
-            [
-                'title' => 'Round-Trip Airfare',
-                'description' => 'Our international flights to Greece and back',
-                'price' => 200,
-                'remaining' => 10,
-                'image' => asset('images/airfare.jpg'),
+            'Honeymoon' => [
+                [
+                    'title' => 'Round-Trip Airfare',
+                    'description' => 'Our international flights to Greece and back',
+                    'price' => 200,
+                    'remaining' => 10,
+                    'image' => asset('images/airfare.jpg'),
+                ],
+                [
+                    'title' => 'Hotel Accommodations',
+                    'description' => 'We’ll be staying at lovely seaside resorts',
+                    'price' => 175,
+                    'remaining' => 8,
+                    'image' => asset('images/hotel.jpg'),
+                ],
             ],
-            [
-                'title' => 'Inter-Island Transportation',
-                'description' => 'We\'re going to visit a few of the islands on our trip',
-                'price' => 25,
-                'remaining' => 8,
-                'image' => asset('images/ferry.jpg'),
+            'House Fund' => [
+                [
+                    'title' => 'Living Room Furniture',
+                    'description' => 'Help us make our new flat a home',
+                    'price' => 150,
+                    'remaining' => 5,
+                    'image' => asset('images/sofa.jpg'),
+                ],
+                [
+                    'title' => 'Kitchen Appliances',
+                    'description' => 'We’re dreaming of that air fryer life',
+                    'price' => 75,
+                    'remaining' => 6,
+                    'image' => asset('images/kitchen.jpg'),
+                ],
             ],
-            [
-                'title' => 'Hotel Accommodations',
-                'description' => 'We\'ll be staying at a few different hotels along our journey',
-                'price' => 175,
-                'remaining' => 12,
-                'image' => asset('images/hotel.jpg'),
+            'Wedding Costs' => [
+                [
+                    'title' => 'Photography Package',
+                    'description' => 'Capturing the day forever',
+                    'price' => 120,
+                    'remaining' => 2,
+                    'image' => asset('images/photographer.jpg'),
+                ],
+            ],
+            'Just Because' => [
+                [
+                    'title' => 'Surprise Us!',
+                    'description' => 'A little treat from you to us ❤️',
+                    'price' => 20,
+                    'remaining' => 20,
+                    'image' => asset('images/surprise.jpg'),
+                ],
             ],
         ];
     }
