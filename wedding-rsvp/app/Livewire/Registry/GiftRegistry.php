@@ -14,21 +14,21 @@ class GiftRegistry extends Component
             'Honeymoon' => [
                 [
                     'title' => 'Dinner Date',
-                    'description' => 'Our international flights to Greece and back',
+                    'description' => 'Get us a romantic date together',
                     'price' => 60,
                     'image' => asset('images/dinner.jpg'),
                 ],
                 [
                     'title' => 'Other stuff?',
-                    'description' => 'We\'ll be staying at lovely seaside resorts',
+                    'description' => 'Any oda thingz mandem might wanna pay fur',
                     'price' => 175,
                     'image' => asset('images/hotel.jpg'),
                 ],
             ],
             'House Fund' => [
                 [
-                    'title' => 'Living Room Furniture',
-                    'description' => 'Desc',
+                    'title' => 'Furniture',
+                    'description' => 'Get us some Ikea flatpack shite!',
                     'price' => 150,
                     'image' => asset('images/sofa.jpg'),
                 ],

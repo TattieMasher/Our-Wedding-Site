@@ -10,7 +10,7 @@
             <div class="gift-grid">
                 @foreach($giftGroup as $i => $gift)
                     <div class="gift-card">
-                        <img src="{{ $gift['image'] }}" alt="{{ $gift['title'] }}">
+                        <img src="{{ $gift['image'] }}" alt="{{-- $gift['title'] --}}">
                         <h4>{{ $gift['title'] }}</h4>
                         <p class="description">{{ $gift['description'] }}</p>
                         <p class="price">£{{ $gift['price'] }}</p>
@@ -21,12 +21,14 @@
         </div>
     @endforeach
 
-    <a href="{{ route('registry.checkout') }}" class="floating-cart-button">
-        Send your gifts!
-        @if ($this->cartCount)
-            <span class="cart-badge">{{ $this->cartCount }}</span>
-        @endif
-    </a>
+    @if ($this->cartCount)
+        <a href="{{ route('registry.checkout') }}" class="floating-cart-button">
+            Send your gifts!
+            @if ($this->cartCount)
+                <span class="cart-badge">{{ $this->cartCount }}</span>
+            @endif
+        </a>
+    @endif
 
     @if ($this->cartCount)
         <button wire:click="clearCart" class="clear-cart-button">

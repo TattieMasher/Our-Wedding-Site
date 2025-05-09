@@ -91,3 +91,21 @@
     }
   }
 }
+
+.clear-button {
+  background: #797474;
+  color: white;
+  border: none;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: bold;
+  font-family: $sans-serif-font;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+      background: darken($text, 10%);
+  }
+}

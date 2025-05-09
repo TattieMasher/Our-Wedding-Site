@@ -32,6 +32,10 @@
         </ul>
     </div>
 
-    <a href="{{ route('registry.clear') }}">asd</a>
+    <a href="{{ route('registry.clear') }}" style="text-decoration: none;";>
+        <div class="clear-button">
+            Remove all
+        </div>
+    </a>
 </div>
 @endsection

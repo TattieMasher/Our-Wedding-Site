@@ -128,18 +128,18 @@ transition: background 0.3s;
 }
 
 .add-to-cart-button {
-background: $text;
-color: white;
-border: none;
-padding: 0.5rem 1rem;
-border-radius: 0.4rem;
-font-size: 0.95rem;
-font-weight: bold;
-font-family: $sans-serif-font;
-cursor: pointer;
-transition: background 0.3s ease;
+    background: $text;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    font-family: $sans-serif-font;
+    cursor: pointer;
+    transition: background 0.3s ease;
 
-&:hover {
-    background: darken($text, 10%);
-}
+    &:hover {
+        background: darken($text, 10%);
+    }
 }

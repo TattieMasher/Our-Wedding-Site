@@ -58,7 +58,6 @@ class RegistryController extends Controller
         // Save to DB
         GiftContribution::create([
             'name' => $validated['name'],
-            'email' => $validated['email'],
             'message' => $validated['message'],
             'amount' => $validated['amount'],
             'items' => json_decode($validated['items'], true),
