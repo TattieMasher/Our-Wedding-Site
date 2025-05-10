@@ -1,7 +1,12 @@
 <div>
     <div class="gift-intro">
-        <p>Your presence is the best gift we could ask for!</p>
-        <p>We’ve got all the “stuff” we need, but if you’d like to contribute to our new home fund, we’d be so grateful (no pressure, of course!). 💕</p>
+    <h4>Our Wedding Fund</h4>
+    <p>
+        Your love, support, and presence on our big day is the <u>most important gift</u> to us.<br><br>
+        We don't have a gift registry, we're lucky to have all we currently need.<br><br>
+        If you do wish to give something, a contribution to our future home or honeymoon experience would be deeply appreciated.<br><br>
+        But please know: there's absolutely no expectation. Just having you with us is more than enough!<br>
+    </p>
     </div>
 
     @foreach($gifts as $category => $giftGroup)

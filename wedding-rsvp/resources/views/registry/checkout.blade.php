@@ -30,12 +30,18 @@
                 <li><span>{{ $item['title'] }}</span> <span>£{{ $item['price'] * $item['quantity'] }}</span></li>
             @endforeach
         </ul>
-        <ul>
-            £1
-        </ul>
+
+        @php
+            $sum = 0;
+            foreach ($cart as $item) {
+                $sum += $item['price'] * $item['quantity'];
+            }
+        @endphp
+
+        <p style="margin-top: 1rem; font-weight: bold;">£{{ $sum }}</p>
     </div>
 
-    <a href="{{ route('registry.clear') }}" style="text-decoration: none;";>
+    <a href="{{ route('registry.clear') }}" style="text-decoration: none;">
         <div class="clear-button">
             Remove all
         </div>

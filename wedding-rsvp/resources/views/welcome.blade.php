@@ -57,7 +57,7 @@
     </section>
 
     <section class="hero-photo">
-        <img src="/img/img-sm.jpg" alt="Alex & Candace" />
+        <img src="{{ asset('images/img-sm.jpg') }}" alt="Alex & Candace" />
     </section>
 
     <section class="rsvp-invite" id="rsvp">

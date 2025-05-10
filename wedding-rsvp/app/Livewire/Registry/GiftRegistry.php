@@ -37,15 +37,7 @@ class GiftRegistry extends Component
                     'title' => 'Home Deposit Contribution',
                     'description' => 'Help us greatly with a contribution towards our first home',
                     'price' => 150,
-                    'image' => asset('images/sofa.jpg'),
-                ],
-            ],
-            'Wedding Costs' => [
-                [
-                    'title' => 'Photographer',
-                    'description' => 'Help us Capture the moment!',
-                    'price' => 50,
-                    'image' => asset('images/photographer.jpg'),
+                    'image' => asset('images/house.jpg'),
                 ],
             ],
             'Just Because' => [

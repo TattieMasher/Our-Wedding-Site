@@ -6,7 +6,7 @@
 <section class="wedding-info">
     <div class="info-grid">
         <div class="info-photo">
-            <img src="/img/eiffel-sm.jpg" alt="Alex & Candace at Eiffel Tower">
+            <img src="{{ asset('images/eiffel-sm.jpg') }}" alt="Alex & Candace at Eiffel Tower">
         </div>
         <div class="info-text">
             <p>Our wedding will be held on <strong><u>Friday, 1st August, 2025 at 2pm</u></strong>.</p>
