@@ -19,20 +19,8 @@ class GiftRegistry extends Component
                     'price' => 60,
                     'image' => asset('images/dinner.jpg'),
                 ],
-                [
-                    'title' => 'Other stuff?',
-                    'description' => 'Any oda thingz mandem might wanna pay fur',
-                    'price' => 175,
-                    'image' => asset('images/hotel.jpg'),
-                ],
             ],
             'House Fund' => [
-                [
-                    'title' => 'Furniture',
-                    'description' => 'Get us some Ikea flatpack shite!',
-                    'price' => 150,
-                    'image' => asset('images/sofa.jpg'),
-                ],
                 [
                     'title' => 'Home Deposit Contribution',
                     'description' => 'Help us greatly with a contribution towards our first home',
@@ -41,31 +29,29 @@ class GiftRegistry extends Component
                 ],
             ],
             'Just Because' => [
-                [
-                    'title' => 'Surprise Us!',
-                    'description' => 'Rando Orlando',
-                    'price' => 20,
-                    'image' => asset('images/surprise.jpg'),
-                ],
             ],
         ];
 
         $this->customGiftLabels = [
             'Honeymoon'     => [
-                'title' => 'Custom Honeymoon Gift',
+                'title' => 'Honeymoon Contribution',
                 'description' => 'Want to help us make our honeymoon extra special?',
+                'image' => asset('images/honeymoon-custom.jpg'),
             ],
             'House Fund'    => [
-                'title' => 'Custom House Fund Gift',
-                'description' => 'Want to support us in creating our first home together?',
+                'title' => 'Other House Gift',
+                'description' => 'Want to gift us something house-related?',
+                'image' => asset('images/house-custom.jpg'),
             ],
             'Wedding Costs' => [
                 'title' => 'Custom Wedding Gift',
                 'description' => 'Want to help us towards some other wedding cost?',
+                'image' => asset('images/justbecause-custom.jpg'),
             ],
             'Just Because'  => [
-                'title' => 'Custom Just-Because Gift',
-                'description' => 'Want to chip in for any reason at all? 🥰',
+                'title' => 'Surprise Gift',
+                'description' => 'Contribute towards something of your choosing!',
+                'image' => asset('images/surprise-custom.jpg'),
             ],
         ];
     }
