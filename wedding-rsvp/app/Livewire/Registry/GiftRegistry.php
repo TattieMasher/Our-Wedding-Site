@@ -7,6 +7,7 @@ use Livewire\Component;
 class GiftRegistry extends Component
 {
     public array $gifts = [];
+    public array $customGiftLabels = [];
 
     public function mount()
     {
@@ -54,6 +55,25 @@ class GiftRegistry extends Component
                     'price' => 20,
                     'image' => asset('images/surprise.jpg'),
                 ],
+            ],
+        ];
+
+        $this->customGiftLabels = [
+            'Honeymoon'     => [
+                'title' => 'Custom Honeymoon Gift',
+                'description' => 'Want to help us make our honeymoon extra special?',
+            ],
+            'House Fund'    => [
+                'title' => 'Custom House Fund Gift',
+                'description' => 'Want to support us in creating our first home together?',
+            ],
+            'Wedding Costs' => [
+                'title' => 'Custom Wedding Gift',
+                'description' => 'Want to help us towards some other wedding cost?',
+            ],
+            'Just Because'  => [
+                'title' => 'Custom Just-Because Gift',
+                'description' => 'Want to chip in for any reason at all? 🥰',
             ],
         ];
     }

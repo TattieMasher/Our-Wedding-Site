@@ -58,7 +58,7 @@
     flex: 1 1 240px;
 
     transition: transform 0.2s ease-in-out;
-    min-height: 100%; // ensures equal height in flex wrap
+    min-height: 100%;
 
     &:hover {
       transform: translateY(-3px);

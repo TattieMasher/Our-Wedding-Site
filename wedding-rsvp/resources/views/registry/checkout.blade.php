@@ -30,6 +30,9 @@
                 <li><span>{{ $item['title'] }}</span> <span>£{{ $item['price'] * $item['quantity'] }}</span></li>
             @endforeach
         </ul>
+        <ul>
+            £1
+        </ul>
     </div>
 
     <a href="{{ route('registry.clear') }}" style="text-decoration: none;";>
