@@ -11,9 +11,15 @@ Route::get('/info', fn () => view('info'))->name('info');
 // Redirect /rsvp with no token → homepage
 Route::get('/rsvp', fn () => redirect()->route('home'));
 
-// RSVP routes
-Route::get('/rsvp/{token}', [RSVPController::class, 'show'])->name('rsvp.show');
-Route::post('/rsvp/{token}', [RSVPController::class, 'submit'])->name('rsvp.submit');
+// Token entry (from QR code) – stores token in session and redirects to welcome
+Route::get('/{token}', [RSVPController::class, 'captureToken'])->name('rsvp.capture');
+
+// New RSVP form page (uses session token)
+Route::get('/rsvp', [RSVPController::class, 'form'])->name('rsvp.form');
+Route::post('/rsvp', [RSVPController::class, 'submit'])->name('rsvp.submit');
+
+// Forget session (reset household)
+Route::get('/forget', [RSVPController::class, 'forget'])->name('rsvp.forget');
 
 // Temporary dev/admin route for QR code viewing
 Route::get('/admin/households', function () {

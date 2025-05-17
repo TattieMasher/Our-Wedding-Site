@@ -18,12 +18,18 @@ class RSVPController extends Controller
         return view('welcome', compact('household'));
     }
 
-    public function submit(Request $request, $token)
+    public function submit(Request $request)
     {
+        $token = session('rsvp_token');
+
+        if (!$token) {
+            return redirect()->route('home')->with('error', 'No RSVP token found in session.');
+        }
+
         $household = Household::with('guests')->where('token', $token)->first();
 
         if (!$household) {
-            return redirect()->route('home');
+            return redirect()->route('home')->with('error', 'Invalid or expired RSVP link.');
         }
 
         foreach ($household->guests as $guest) {
@@ -42,6 +48,41 @@ class RSVPController extends Controller
             }
         }
 
-        return redirect()->route('rsvp.show', $token)->with('success', 'Thanks for RSVPing!');
+        return redirect()->route('rsvp.form')->with('success', 'Thanks for RSVPing!');
+    }
+
+    public function captureToken($token)
+    {
+        $household = Household::with('guests')->where('token', $token)->first();
+
+        if (!$household) {
+            return redirect()->route('home');
+        }
+
+        session(['rsvp_token' => $token]);
+        return redirect()->route('home'); // You can also redirect to `info` or somewhere else if preferred
+    }
+
+    public function form()
+    {
+        $token = session('rsvp_token');
+
+        if (!$token) {
+            return redirect()->route('home')->with('error', 'Please access the RSVP form from your invitation link.');
+        }
+
+        $household = Household::with('guests')->where('token', $token)->first();
+
+        if (!$household) {
+            return redirect()->route('home')->with('error', 'Invalid or expired RSVP link.');
+        }
+
+        return view('rsvp.form', compact('household'));
+    }
+
+    public function forget()
+    {
+        session()->flush();
+        return redirect()->route('home')->with('success', 'RSVP session has been cleared.');
     }
 }

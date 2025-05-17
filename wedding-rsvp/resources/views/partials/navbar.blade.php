@@ -14,7 +14,7 @@
         <ul class="navbar-links">
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('info') }}">Info</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
+            <li><a href="{{ route('rsvp.form') }}">RSVP</a></li>
             <li><a href="{{ route('registry.index') }}">Gifts</a></li>
         </ul>
     </div>

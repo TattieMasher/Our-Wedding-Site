@@ -64,11 +64,4 @@
         <p>We request the pleasure of your company as we celebrate our love.</p>
         <a class="rsvp-button" href="info">Please let us know if you can attend (RSVP)</a>
     </section>
-
-    @isset($household)
-        <section class="rsvp-form-section" id="rsvp-form">
-            <h2>RSVP for {{ $household->name }}</h2>
-            @include('rsvp.form-fields', ['household' => $household])
-        </section>
-    @endisset
 @endsection
