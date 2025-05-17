@@ -41,10 +41,12 @@
     <div class="gift-info">
         <div class="house">🏠</div>
         <p>
+            Please RSVP and let us know you're coming!
+
             Your presence is the best gift we could ask for!
             <br><br>We've got all the “stuff” we need, but if you'd like to contribute to our new home fund, we'd be so grateful (no pressure, of course!). 💕
         </p>
-        <a href="#">Gift here</a>
+        <a href="rsvp">Gift here</a>
     </div>
 </section>
 @endsection

@@ -62,8 +62,7 @@
 
     <section class="rsvp-invite" id="rsvp">
         <p>We request the pleasure of your company as we celebrate our love.</p>
-        <a class="rsvp-button" href="#rsvp-form">Please let us know if you can attend (RSVP)</a>
-        <!-- TODO -->
+        <a class="rsvp-button" href="info">Please let us know if you can attend (RSVP)</a>
     </section>
 
     @isset($household)
