@@ -44,12 +44,12 @@ class GiftRegistry extends Component
                 'image' => asset('images/house-custom.jpg'),
             ],
             'Wedding Costs' => [
-                'title' => 'Custom Wedding Gift',
+                'title' => 'Other Wedding Gift',
                 'description' => 'Want to help us towards some other wedding cost?',
                 'image' => asset('images/justbecause-custom.jpg'),
             ],
             'Just Because'  => [
-                'title' => 'Surprise Gift',
+                'title' => 'Surprise',
                 'description' => 'Contribute towards something of your choosing!',
                 'image' => asset('images/surprise-custom.jpg'),
             ],

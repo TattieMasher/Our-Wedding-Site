@@ -50,7 +50,7 @@
 
     @if ($this->cartCount)
         <a href="{{ route('registry.checkout') }}" class="floating-cart-button">
-            Chosen gifts!
+            Send your gifts!
             @if ($this->cartCount)
                 <span class="cart-badge">{{ $this->cartCount }}</span>
             @endif
