@@ -38,11 +38,12 @@
         </div>
     </div>
 
-    <div class="gift-info">
+    <div class="rsvp-info">
         <h3>
-            Please RSVP and let us know you're coming!
+            We'd love to see you there!
         </h3>
-        <a href="{{ route('rsvp.form') }}">Gift here</a>
+        <p>Please RSVP below if you can join us</p>
+        <a class="rsvp-button" href="{{ route('rsvp.form') }}">RSVP</a>
     </div>
 </section>
 @endsection

@@ -61,7 +61,8 @@
     </section>
 
     <section class="rsvp-invite" id="rsvp">
-        <p>We request the pleasure of your company as we celebrate our love.</p>
-        <a class="rsvp-button" href="info">Please let us know if you can attend (RSVP)</a>
+        <h3>We request the pleasure of your company as we celebrate our love.</h3>
+        <p>Please read more about the big day and RSVP to let us know if you'll be there!</p>
+        <a class="rsvp-button" href="info">Find out more</a>
     </section>
 @endsection
