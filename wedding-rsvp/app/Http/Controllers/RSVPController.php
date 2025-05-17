@@ -68,7 +68,7 @@ class RSVPController extends Controller
         $token = session('rsvp_token');
 
         if (!$token) {
-            return redirect()->route('home')->with('error', 'Please access the RSVP form from your invitation link.');
+            dd('TODO: Non-authed form');
         }
 
         $household = Household::with('guests')->where('token', $token)->first();
