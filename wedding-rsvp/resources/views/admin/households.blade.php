@@ -1,18 +1,28 @@
 @extends('layouts.app')
 
+@section('title', 'Admin – Households')
+
 @section('content')
-    <h1>Households</h1>
+    <section class="admin-households">
+        <h1>Households</h1>
 
-    @foreach($households as $household)
-        <div style="margin-bottom: 2rem;">
-            <h3>{{ $household->name }}</h3>
-            <p>RSVP Link: <a href="{{ route('rsvp.capture', $household->token) }}" target="_blank">
-                {{ route('rsvp.capture', $household->token) }}
-            </a></p>
+        <div class="household-grid">
+            @foreach($households as $household)
+                <div class="household-card">
+                    <h3>{{ $household->name }}</h3>
 
-            <div>
-                {!! QrCode::size(200)->generate(route('rsvp.capture', $household->token)) !!}
-            </div>
+                    <p>
+                        <strong>RSVP Link:</strong><br>
+                        <a href="{{ route('rsvp.capture', $household->token) }}" target="_blank">
+                            {{ route('rsvp.capture', $household->token) }}
+                        </a>
+                    </p>
+
+                    <div class="qr-code">
+                        {!! QrCode::size(200)->generate(route('rsvp.capture', $household->token)) !!}
+                    </div>
+                </div>
+            @endforeach
         </div>
-    @endforeach
+    </section>
 @endsection
