@@ -4,8 +4,8 @@
 
 @section('content')
     <section class="rsvp-form-section">
-        <h2>RSVP for {{ $household->name }}</h2>
+        <h2>RSVP</h2>
 
-        @include('rsvp.form-fields', ['household' => $household])
+        <livewire:rsvp.guest-form :household="$household" />
     </section>
 @endsection

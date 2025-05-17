@@ -77,7 +77,9 @@ class RSVPController extends Controller
             return redirect()->route('home')->with('error', 'Invalid or expired RSVP link.');
         }
 
-        return view('rsvp.form', compact('household'));
+        return view('rsvp.form', [
+            'household' => $household ?? null,
+        ]);
     }
 
     public function forget()
