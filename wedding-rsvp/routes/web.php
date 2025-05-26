@@ -8,17 +8,6 @@ use App\Models\Household;
 Route::get('/', fn () => view('welcome'))->name('home');
 Route::get('/info', fn () => view('info'))->name('info');
 
-// Redirect /rsvp with no token → homepage
-Route::get('/rsvp', fn () => redirect()->route('home'));
-
-// Token entry (from QR code) – stores token in session and redirects to welcome
-Route::get('/{token}', [RSVPController::class, 'captureToken'])->name('rsvp.capture');
-
-// New RSVP form page (uses session token)
-Route::get('/rsvp', [RSVPController::class, 'form'])->name('rsvp.form');
-Route::post('/rsvp', [RSVPController::class, 'submit'])->name('rsvp.submit');
-Route::get('/rsvp/thanks', fn () => view('rsvp.thanks'))->name('rsvp.thanks');
-
 // Forget session (reset household)
 Route::get('/forget', [RSVPController::class, 'forget'])->name('rsvp.forget');
 
@@ -35,3 +24,17 @@ Route::post('/cart/add', [RegistryController::class, 'addToCart'])->name('cart.a
 Route::get('/checkout', [RegistryController::class, 'checkout'])->name('registry.checkout');
 Route::post('/checkout/submit', [RegistryController::class, 'submitContribution'])->name('registry.submit');
 Route::get('/checkout/clear', [RegistryController::class, 'clearCart'])->name('registry.clear');
+
+
+
+// RSVP stuff
+// Redirect /rsvp with no token → homepage
+Route::get('/rsvp', fn () => redirect()->route('home'));
+
+// Token entry (from QR code) – stores token in session and redirects to welcome
+Route::get('/{token}', [RSVPController::class, 'captureToken'])->name('rsvp.capture');
+
+// New RSVP form page (uses session token)
+Route::get('/rsvp', [RSVPController::class, 'form'])->name('rsvp.form');
+Route::post('/rsvp', [RSVPController::class, 'submit'])->name('rsvp.submit');
+Route::get('/rsvp/thanks', fn () => view('rsvp.thanks'))->name('rsvp.thanks');

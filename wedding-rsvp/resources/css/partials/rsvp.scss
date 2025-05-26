@@ -146,45 +146,78 @@
 
 .thanks-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    min-height: 60vh;
-    text-align: center;
+    justify-content: center;
+    min-height: 80vh;
     padding: 2rem;
+    position: relative;
+    z-index: 0;
 
     .thanks-card {
         background: #fff;
         border-radius: 1rem;
         padding: 2rem 2.5rem;
-        box-shadow: 0 0 12px rgba(0,0,0,0.08);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
         max-width: 600px;
-        margin: auto;
+        width: 100%;
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 1;
+        text-align: center;
+
+        h1, h2 {
+            font-family: $serif-font;
+            color: $text;
+            margin-bottom: 1rem;
+            margin-top: 0rem;
+        }
 
         h1 {
             font-size: 2.2rem;
-            color: $text;
-            margin-bottom: 1rem;
-            font-family: $serif-font;
+        }
+
+        h2 {
+            font-size: 1.6rem;
         }
 
         p {
             font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
         }
 
-        .back-link {
+        a {
             display: inline-block;
             margin-top: 1rem;
             background: $text;
             color: #fff;
             padding: 0.75rem 1.5rem;
-            text-decoration: none;
             border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
 
             &:hover {
                 background: darken($text, 10%);
             }
+        }
+
+        .gift-link {
+            margin-top: 1.5rem;
+            &:hover {
+                background: $text;
+            }
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .thanks-page {
+        padding: 0.2rem;
+
+        .thanks-card {
+            padding: 1.5rem 1rem;
+            box-shadow: none;
         }
     }
 }
