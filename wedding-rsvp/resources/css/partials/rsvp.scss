@@ -35,6 +35,7 @@
         }
 
         h3 {
+            margin-top: 0.5rem;
             margin-bottom: 0.5rem;
         }
 
@@ -70,11 +71,12 @@
         .song-request-section {
             display: flex;
             flex-direction: column;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 1rem;
 
             .song-request {
                 display: flex;
                 flex-direction: column;
-                margin-bottom: 1rem;
 
                 label {
                     margin-bottom: 0.25rem;
@@ -87,6 +89,10 @@
                 button {
                     margin-top: 0.5rem;
                 }
+            }
+
+            > button {
+                margin-bottom: 1rem;
             }
         }
     }
@@ -133,4 +139,8 @@
         }
     }
 
+    .contact-section {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+    }
 }
