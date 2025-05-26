@@ -67,18 +67,19 @@ class RSVPController extends Controller
     {
         $token = session('rsvp_token');
 
-        if (!$token) {
-            dd('TODO: Non-authed form');
-        }
+        $household = null;
 
-        $household = Household::with('guests')->where('token', $token)->first();
+        if ($token) {
+            $household = Household::with('guests')->where('token', $token)->first();
 
-        if (!$household) {
-            return redirect()->route('home')->with('error', 'Invalid or expired RSVP link.');
+            // If token is invalid, clear session
+            if (!$household) {
+                session()->forget('rsvp_token');
+            }
         }
 
         return view('rsvp.form', [
-            'household' => $household ?? null,
+            'household' => $household,
         ]);
     }
 
