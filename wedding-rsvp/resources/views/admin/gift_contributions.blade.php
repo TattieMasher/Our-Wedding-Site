@@ -4,7 +4,7 @@
 
 @section('content')
 <section class="admin-contributions">
-    <h1>🎁 Gift Contributions</h1>
+    <h1>Gift Contributions</h1>
 
     @if($contributions->isEmpty())
         <p>No contributions have been made yet.</p>

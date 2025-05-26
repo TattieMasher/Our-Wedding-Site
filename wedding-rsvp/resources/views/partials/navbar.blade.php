@@ -16,6 +16,14 @@
             <li><a href="{{ route('info') }}">Info</a></li>
             <li><a href="{{ route('rsvp.form') }}">RSVP</a></li>
             <li><a href="{{ route('registry.index') }}">Gifts</a></li>
+
+            @if(request()->is('admin*'))
+                <li><hr style="opacity: 0.3; margin: 0.5rem 0;"></li>
+                <li><a href="{{ route('admin.households') }}">Households</a></li>
+                <li><a href="{{ route('admin.guests') }}">Guests</a></li>
+                <li><a href="{{ route('admin.rsvp_submissions') }}">RSVPs</a></li>
+                <li><a href="{{ route('admin.gift_contributions') }}">Gifts</a></li>
+            @endif
         </ul>
     </div>
 </nav>
