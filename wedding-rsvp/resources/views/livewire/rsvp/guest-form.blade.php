@@ -5,7 +5,18 @@
 
     <form wire:submit.prevent="submit">
         @foreach($guests as $index => $guest)
-            <div class="guest-section" wire:key="guest-{{ $index }}" x-data="{ showDietNote: @js($guest['diet'] === 'other') }" x-effect="showDietNote = $wire.guests[{{ $index }}].diet === 'other'">
+            <div
+                class="guest-section"
+                wire:key="guest-{{ $index }}"
+                x-data="{
+                    isAttending: {{ json_encode((bool) $guest['is_attending']) }},
+                    showDietNote: {{ json_encode($guest['diet'] === 'other') }}
+                }"
+                x-effect="
+                    isAttending = !!+($wire.guests[{{ $index }}].is_attending);
+                    showDietNote = $wire.guests[{{ $index }}].diet === 'other';
+                "
+            >
                 <h3>
                     @if(count($guests) > 1)
                         <button type="button" class="remove-guest-button" wire:click="removeGuest({{ $index }})">Remove</button>
@@ -26,17 +37,20 @@
                     </label>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group" x-show="isAttending" x-transition>
                     <label>Dietary Requirements / Allergies:</label>
                     @foreach(['none', 'vegetarian', 'vegan', 'other'] as $diet)
                         <label>
-                            <input type="radio"
+                            <input
+                                type="radio"
                                 wire:model="guests.{{ $index }}.diet"
                                 value="{{ $diet }}"
-                                name="guest-{{ $index }}-diet">
-                                {{ ucfirst($diet) }}
+                                name="guest-{{ $index }}-diet"
+                            >
+                            {{ ucfirst($diet) }}
                         </label>
                     @endforeach
+
                     <div x-show="showDietNote" x-transition>
                         <textarea
                             wire:model="guests.{{ $index }}.dietary_requirements"
