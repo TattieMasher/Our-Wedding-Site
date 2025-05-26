@@ -118,6 +118,9 @@
     }
 
     .contact-section {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+
         h3 {
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
@@ -138,9 +141,50 @@
             margin-top: 0.5rem;
         }
     }
+}
 
-    .contact-section {
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 1rem;
+
+.thanks-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 2rem;
+
+    .thanks-card {
+        background: #fff;
+        border-radius: 1rem;
+        padding: 2rem 2.5rem;
+        box-shadow: 0 0 12px rgba(0,0,0,0.08);
+        max-width: 600px;
+        margin: auto;
+
+        h1 {
+            font-size: 2.2rem;
+            color: $text;
+            margin-bottom: 1rem;
+            font-family: $serif-font;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            background: $text;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+
+            &:hover {
+                background: darken($text, 10%);
+            }
+        }
     }
 }

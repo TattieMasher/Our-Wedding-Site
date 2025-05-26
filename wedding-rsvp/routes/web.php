@@ -17,6 +17,7 @@ Route::get('/{token}', [RSVPController::class, 'captureToken'])->name('rsvp.capt
 // New RSVP form page (uses session token)
 Route::get('/rsvp', [RSVPController::class, 'form'])->name('rsvp.form');
 Route::post('/rsvp', [RSVPController::class, 'submit'])->name('rsvp.submit');
+Route::get('/rsvp/thanks', fn () => view('rsvp.thanks'))->name('rsvp.thanks');
 
 // Forget session (reset household)
 Route::get('/forget', [RSVPController::class, 'forget'])->name('rsvp.forget');

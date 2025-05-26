@@ -113,9 +113,7 @@ class GuestForm extends Component
             ],
         ]);
 
-        session()->flash('success', 'RSVP submitted successfully!');
-        $this->reset(['guests', 'song_requests', 'contact_email', 'contact_phone']);
-        $this->guests[] = $this->blankGuest();
+        redirect()->route('rsvp.thanks');
     }
 
     public function addSongRequest(): void
