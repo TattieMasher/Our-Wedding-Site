@@ -4,6 +4,7 @@ namespace App\Livewire\Rsvp;
 
 use App\Models\Guest;
 use App\Models\Household;
+use App\Models\RsvpSubmission;
 use Livewire\Component;
 
 class GuestForm extends Component
@@ -12,6 +13,7 @@ class GuestForm extends Component
     public string $contact_email = '';
     public string $contact_phone = '';
     public ?Household $household = null;
+    public array $song_requests = [];
 
     public function mount(): void
     {
@@ -72,6 +74,8 @@ class GuestForm extends Component
             'guests.*.special_requests' => 'nullable|string|max:500',
             'contact_email' => 'nullable|email',
             'contact_phone' => 'nullable|string|max:20',
+            'song_requests.*.title' => 'nullable|string|max:255',
+            'song_requests.*.artist' => 'nullable|string|max:255',
         ]);
 
         if ($this->household) {
@@ -86,19 +90,43 @@ class GuestForm extends Component
                     ]);
                 }
             }
-        } else {
-            // Anonymous submission – store locally or send by email/log/etc.
-            // You could also optionally save this to a separate table
-            logger('Anonymous RSVP', [
-                'guests' => $this->guests,
-                'contact_email' => $this->contact_email,
-                'contact_phone' => $this->contact_phone,
-            ]);
         }
 
+        if ($this->household) {
+            foreach ($this->song_requests as $song) {
+                if (!empty($song['title'])) {
+                    $this->household->songRequests()->create([
+                        'title' => $song['title'],
+                        'artist' => $song['artist'] ?? null,
+                    ]);
+                }
+            }
+        }
+
+        RsvpSubmission::create([
+            'household_id' => $this->household?->id,
+            'contact_email' => $this->contact_email,
+            'contact_phone' => $this->contact_phone,
+            'payload' => [
+                'guests' => $this->guests,
+                'songs' => $this->song_requests,
+            ],
+        ]);
+
         session()->flash('success', 'RSVP submitted successfully!');
-        $this->reset(['guests', 'contact_email', 'contact_phone']);
+        $this->reset(['guests', 'song_requests', 'contact_email', 'contact_phone']);
         $this->guests[] = $this->blankGuest();
+    }
+
+    public function addSongRequest(): void
+    {
+        $this->song_requests[] = ['title' => '', 'artist' => ''];
+    }
+
+    public function removeSongRequest(int $index): void
+    {
+        unset($this->song_requests[$index]);
+        $this->song_requests = array_values($this->song_requests);
     }
 
     public function render()
