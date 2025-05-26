@@ -11,11 +11,29 @@ Route::get('/info', fn () => view('info'))->name('info');
 // Forget session (reset household)
 Route::get('/forget', [RSVPController::class, 'forget'])->name('rsvp.forget');
 
-// Temporary dev/admin route for QR code viewing
-Route::get('/admin/households', function () {
-    $households = Household::all();
-    return view('admin.households', compact('households'));
+// Admin dashboard for RSVP + Registry viewing
+Route::prefix('admin')->group(function () {
+    // Temporary dev/admin route for QR code viewing
+    Route::get('/households', fn () => view('admin.households', [
+        'households' => \App\Models\Household::with('guests')->get()
+    ]))->name('admin.households');
+
+    // Temporary dev/admin route for guest statuses
+    Route::get('/guests', fn () => view('admin.guests', [
+        'guests' => \App\Models\Guest::with('household')->orderBy('name')->get()
+    ]))->name('admin.guests');
+
+    // Temporary dev/admin route for submission viewing
+    Route::get('/rsvp-submissions', fn () => view('admin.rsvp_submissions', [
+        'submissions' => \App\Models\RsvpSubmission::latest()->get()
+    ]))->name('admin.rsvp_submissions');
+
+    // Temporary dev/admin route for gift contributions
+    Route::get('/gift-contributions', fn () => view('admin.gift_contributions', [
+        'contributions' => \App\Models\GiftContribution::latest()->get()
+    ]))->name('admin.gift_contributions');
 });
+
 
 
 // Registry stuff
