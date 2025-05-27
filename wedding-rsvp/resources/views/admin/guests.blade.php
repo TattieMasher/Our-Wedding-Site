@@ -4,6 +4,26 @@
 
 @section('content')
 <section class="admin-table">
+    <h2>Guest Summary</h2>
+    <table class="summary-table">
+        <thead>
+            <tr>
+                <th>Total</th>
+                <th>✅ Attending</th>
+                <th>❌ Not Attending</th>
+                <th>🤷 Unknown</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ $guests->count() }}</td>
+                <td>{{ $attending }}</td>
+                <td>{{ $notAttending }}</td>
+                <td>{{ $unknown }}</td>
+            </tr>
+        </tbody>
+    </table>
+
     <h2>Guest List</h2>
     <table>
         <thead>

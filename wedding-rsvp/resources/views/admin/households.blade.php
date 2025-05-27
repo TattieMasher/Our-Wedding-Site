@@ -18,6 +18,19 @@
                         </a>
                     </p>
 
+                    @if($household->guests->isNotEmpty())
+                        <div class="guest-list">
+                            <strong>Guests:</strong>
+                            <ul>
+                                @foreach($household->guests as $guest)
+                                    <li>
+                                        {{ $guest->name }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="qr-code">
                         {!! QrCode::size(200)->generate(route('rsvp.capture', $household->token)) !!}
                     </div>

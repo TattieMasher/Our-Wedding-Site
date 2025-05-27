@@ -19,9 +19,16 @@ Route::prefix('admin')->group(function () {
     ]))->name('admin.households');
 
     // Temporary dev/admin route for guest statuses
-    Route::get('/guests', fn () => view('admin.guests', [
-        'guests' => \App\Models\Guest::with('household')->orderBy('name')->get()
-    ]))->name('admin.guests');
+    Route::get('/guests', function () {
+        $guests = \App\Models\Guest::with('household')->orderBy('name')->get();
+
+        $attending = $guests->where('is_attending', true)->count();
+        $notAttending = $guests->where('is_attending', false)->count();
+        $unknown = $guests->whereNull('is_attending')->count();
+
+        return view('admin.guests', compact('guests', 'attending', 'notAttending', 'unknown'));
+    })->name('admin.guests');
+
 
     // Temporary dev/admin route for submission viewing
     Route::get('/rsvp-submissions', fn () => view('admin.rsvp_submissions', [
