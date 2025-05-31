@@ -4,7 +4,8 @@
 
 @section('content')
 <div class="checkout-wrapper">
-    <h2>We fank u lots n' lots. Cheers for the £$!</h2>
+    <h2>Thanks so much for your generosity!</h2>
+    <h4>We really appreciate it!</h4>
 
     <form method="POST" action="{{ route('registry.submit') }}" class="contribution-form">
         @csrf

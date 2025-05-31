@@ -52,7 +52,7 @@
         <div class="thanks-card">
             <h2>🎁 Considering a Gift?</h2>
             <p>Please know your presence at our wedding is the <u>only gift</u> we truly need.</p>
-            <p>But if you would like to contribute to our honeymoon, future home, or just because, we've put together a small list of ideas here.</p>
+            <p>But if you'd <u>like</u> to chip in towards our honeymoon, future home, or just because, we've put together a small list of ideas here, handled by PayPal.</p>
             <a href="{{ route('registry.index') }}" class="gift-link">View Our Wedding Gift Page</a>
         </div>
     </section>

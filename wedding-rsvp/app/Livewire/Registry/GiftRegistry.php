@@ -19,6 +19,18 @@ class GiftRegistry extends Component
                     'price' => 60,
                     'image' => asset('images/dinner.jpg'),
                 ],
+                [
+                    'title' => 'Couples Massage',
+                    'description' => 'Relaxing spa time',
+                    'price' => 90,
+                    'image' => asset('images/massage.jpg'),
+                ],
+                [
+                    'title' => 'Sunset Cocktails',
+                    'description' => 'A couple of fancy drinks to toast the evening',
+                    'price' => 30,
+                    'image' => asset('images/cocktails.jpg'),
+                ],
             ],
             'House Fund' => [
                 [
@@ -28,13 +40,27 @@ class GiftRegistry extends Component
                     'image' => asset('images/house.jpg'),
                 ],
             ],
+            'Wedding' => [
+                [
+                    'title' => 'Wedding Cake',
+                    'description' => 'Help us with the cost of our wedding cake',
+                    'price' => 100,
+                    'image' => asset('images/cake.jpg'),
+                ],
+                [
+                    'title' => 'Photographer',
+                    'description' => 'Help us capture the big day!',
+                    'price' => 80,
+                    'image' => asset('images/photographer.jpg'),
+                ],
+            ],
             'Just Because' => [
             ],
         ];
 
         $this->customGiftLabels = [
             'Honeymoon'     => [
-                'title' => 'Honeymoon Contribution',
+                'title' => 'Honeymoon Surprise',
                 'description' => 'Want to help us make our honeymoon extra special?',
                 'image' => asset('images/honeymoon-custom.jpg'),
             ],
@@ -46,11 +72,11 @@ class GiftRegistry extends Component
             'Wedding Costs' => [
                 'title' => 'Other Wedding Gift',
                 'description' => 'Want to help us towards some other wedding cost?',
-                'image' => asset('images/justbecause-custom.jpg'),
+                'image' => asset('images/wedding-surprise.jpg'),
             ],
             'Just Because'  => [
                 'title' => 'Surprise',
-                'description' => 'Contribute towards something of your choosing!',
+                'description' => 'Pick something special - it’s entirely up to you!',
                 'image' => asset('images/surprise-custom.jpg'),
             ],
         ];

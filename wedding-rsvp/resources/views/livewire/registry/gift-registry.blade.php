@@ -4,7 +4,7 @@
     <p>
         Your love, support, and presence on our big day is the <u>most important gift</u> to us.<br><br>
         We don't have a gift registry, we're lucky to have all we currently need.<br><br>
-        If you do wish to give something, you can choose what to contribute towards below, and send us a personalised message, which would be deeply appreciated.<br><br>
+        If you do wish to give something via PayPal, you can pick a gift below and leave us a personal message, which would be deeply appreciated.<br><br>
         But please know: there's absolutely <u>no expectation</u>. Just having you with us is more than enough!<br>
     </p>
     </div>

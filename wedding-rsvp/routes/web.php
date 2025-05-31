@@ -20,7 +20,12 @@ Route::prefix('admin')->group(function () {
 
     // Temporary dev/admin route for guest statuses
     Route::get('/guests', function () {
-        $guests = \App\Models\Guest::with('household')->orderBy('name')->get();
+        $guests = \App\Models\Guest::with('household')
+            ->join('households', 'guests.household_id', '=', 'households.id')
+            ->orderBy('households.name')
+            ->orderBy('guests.name')
+            ->select('guests.*') // important to avoid columns clashing
+            ->get();
 
         $attending = $guests->where('is_attending', true)->count();
         $notAttending = $guests->where('is_attending', false)->count();
