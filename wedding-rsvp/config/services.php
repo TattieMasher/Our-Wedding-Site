@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'paypal' => [
+        'me_username' => env('PAYPAL_ME_USERNAME'),
+    ],
+
 ];

@@ -20,7 +20,7 @@ class RegistryController extends Controller
         $cart = session()->get('cart', []);
         $key = $gift['title']; // Assuming titles are unique
 
-        if (!isset($cart[$key])) {
+        if (! isset($cart[$key])) {
             $cart[$key] = $gift;
             $cart[$key]['quantity'] = $quantity;
         } else {
@@ -35,13 +35,15 @@ class RegistryController extends Controller
     public function checkout()
     {
         $cart = session('cart', []);
-        $total = collect($cart)->sum(fn($item) => $item['price'] * $item['quantity']);
+        $total = collect($cart)->sum(fn ($item) => $item['price'] * $item['quantity']);
+
         return view('registry.checkout', compact('cart', 'total'));
     }
 
     public function clearCart()
     {
         session()->forget('cart');
+
         return redirect()->route('registry.index');
     }
 
@@ -65,16 +67,21 @@ class RegistryController extends Controller
 
         session()->forget('cart');
 
+        $paypalMe = config('services.paypal.me_username');
+        if (! $paypalMe) {
+            return redirect()->route('registry.checkout')->with('error', 'Payment link is not configured.');
+        }
+
         // Generate PayPal note
         $items = collect(json_decode($validated['items'], true));
-        $note = $items->map(fn($i) => "{$i['title']} (£" . ($i['price'] * $i['quantity']) . ")")->join(', ');
-        if (!empty($validated['message'])) {
-            $note .= " - Message: " . $validated['message'];
+        $note = $items->map(fn ($i) => "{$i['title']} (£".($i['price'] * $i['quantity']).')')->join(', ');
+        if (! empty($validated['message'])) {
+            $note .= ' - Message: '.$validated['message'];
         }
 
         // Build redirect URL
-        $paypalUrl = 'https://paypal.me/McCaughranWedding/' . $validated['amount'];
-        $paypalUrl .= '?note=' . urlencode($note);
+        $paypalUrl = 'https://paypal.me/'.$paypalMe.'/'.$validated['amount'];
+        $paypalUrl .= '?note='.urlencode($note);
 
         return redirect()->away($paypalUrl);
     }

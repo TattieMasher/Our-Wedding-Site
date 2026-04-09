@@ -7,6 +7,10 @@
     <h2>Thanks so much for your generosity!</h2>
     <h4>We really appreciate it!</h4>
 
+    @if (session('error'))
+        <p class="checkout-error" role="alert">{{ session('error') }}</p>
+    @endif
+
     <form method="POST" action="{{ route('registry.submit') }}" class="contribution-form">
         @csrf
 

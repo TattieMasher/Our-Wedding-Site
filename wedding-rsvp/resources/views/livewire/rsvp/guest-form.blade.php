@@ -3,6 +3,10 @@
         <p style="color: green;">{{ session('success') }}</p>
     @endif
 
+    @error('_form')
+        <p class="rsvp-form-error" role="alert">{{ $message }}</p>
+    @enderror
+
     <form wire:submit.prevent="submit">
         @foreach($guests as $index => $guest)
             <div

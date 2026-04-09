@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\RegistryController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RSVPController;
 use App\Models\Household;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => view('welcome'))->name('home');
 Route::get('/info', fn () => view('info'))->name('info');
@@ -15,7 +15,7 @@ Route::get('/forget', [RSVPController::class, 'forget'])->name('rsvp.forget');
 Route::prefix('admin')->group(function () {
     // Temporary dev/admin route for QR code viewing
     Route::get('/households', fn () => view('admin.households', [
-        'households' => \App\Models\Household::with('guests')->get()
+        'households' => \App\Models\Household::with('guests')->get(),
     ]))->name('admin.households');
 
     // Temporary dev/admin route for guest statuses
@@ -34,28 +34,25 @@ Route::prefix('admin')->group(function () {
         return view('admin.guests', compact('guests', 'attending', 'notAttending', 'unknown'));
     })->name('admin.guests');
 
-
     // Temporary dev/admin route for submission viewing
     Route::get('/rsvp-submissions', fn () => view('admin.rsvp_submissions', [
-        'submissions' => \App\Models\RsvpSubmission::latest()->get()
+        'submissions' => \App\Models\RsvpSubmission::latest()->get(),
     ]))->name('admin.rsvp_submissions');
 
     // Temporary dev/admin route for gift contributions
     Route::get('/gift-contributions', fn () => view('admin.gift_contributions', [
-        'contributions' => \App\Models\GiftContribution::latest()->get()
+        'contributions' => \App\Models\GiftContribution::latest()->get(),
     ]))->name('admin.gift_contributions');
 });
-
-
 
 // Registry stuff
 Route::get('/gifts', [RegistryController::class, 'index'])->name('registry.index');
 Route::post('/cart/add', [RegistryController::class, 'addToCart'])->name('cart.add');
 Route::get('/checkout', [RegistryController::class, 'checkout'])->name('registry.checkout');
-Route::post('/checkout/submit', [RegistryController::class, 'submitContribution'])->name('registry.submit');
+Route::post('/checkout/submit', [RegistryController::class, 'submitContribution'])
+    ->middleware('throttle:registry-submit')
+    ->name('registry.submit');
 Route::get('/checkout/clear', [RegistryController::class, 'clearCart'])->name('registry.clear');
-
-
 
 // RSVP stuff
 // Redirect /rsvp with no token → homepage
@@ -66,5 +63,7 @@ Route::get('/{token}', [RSVPController::class, 'captureToken'])->name('rsvp.capt
 
 // New RSVP form page (uses session token)
 Route::get('/rsvp', [RSVPController::class, 'form'])->name('rsvp.form');
-Route::post('/rsvp', [RSVPController::class, 'submit'])->name('rsvp.submit');
+Route::post('/rsvp', [RSVPController::class, 'submit'])
+    ->middleware('throttle:rsvp-submit')
+    ->name('rsvp.submit');
 Route::get('/rsvp/thanks', fn () => view('rsvp.thanks'))->name('rsvp.thanks');

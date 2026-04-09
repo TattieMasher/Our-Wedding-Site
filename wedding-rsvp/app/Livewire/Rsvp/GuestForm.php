@@ -5,14 +5,19 @@ namespace App\Livewire\Rsvp;
 use App\Models\Guest;
 use App\Models\Household;
 use App\Models\RsvpSubmission;
+use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Component;
 
 class GuestForm extends Component
 {
     public array $guests = [];
+
     public string $contact_email = '';
+
     public string $contact_phone = '';
+
     public ?Household $household = null;
+
     public array $song_requests = [];
 
     public function mount(): void
@@ -36,7 +41,7 @@ class GuestForm extends Component
             }
         }
 
-        if (!$this->guests) {
+        if (! $this->guests) {
             $this->guests[] = $this->blankGuest();
         }
     }
@@ -66,6 +71,16 @@ class GuestForm extends Component
 
     public function submit(): void
     {
+        $limiterKey = 'rsvp-livewire:'.request()->ip();
+
+        if (RateLimiter::tooManyAttempts($limiterKey, 10)) {
+            $this->addError('_form', 'Too many RSVP attempts. Please try again in a minute.');
+
+            return;
+        }
+
+        RateLimiter::hit($limiterKey, 60);
+
         $this->validate([
             'guests.*.name' => 'required|string|max:255',
             'guests.*.is_attending' => 'required|boolean',
@@ -94,7 +109,7 @@ class GuestForm extends Component
 
         if ($this->household) {
             foreach ($this->song_requests as $song) {
-                if (!empty($song['title'])) {
+                if (! empty($song['title'])) {
                     $this->household->songRequests()->create([
                         'title' => $song['title'],
                         'artist' => $song['artist'] ?? null,
