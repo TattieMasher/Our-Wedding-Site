@@ -1,0 +1,103 @@
+.hero {
+    text-align: center;
+
+    .hero-hearts {
+        font-size: 2rem;
+        margin-top: 0px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-name-detail-wrapper {
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 1px;
+            background-color: $text;
+            margin: 1rem auto;
+        }
+
+        .hero-names {
+            font-size: 3rem;
+            font-family: $serif-font;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .hero-details {
+            line-height: 2;
+            margin-top: 0.5rem;
+        }
+    }
+
+    a {
+        color:inherit;
+        font-weight: bolder;
+        text-decoration: underline;
+    }
+}
+
+
+
+.hero-photo {
+    display: flex;
+    justify-content: center;
+    margin: 2rem auto;
+    padding: 0 1rem;
+
+    img {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        border-radius: 1rem;
+        object-fit: cover;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.rsvp-invite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 2rem auto;
+    margin-top: 0px;
+    padding: 0 1rem;
+    text-align: center;
+
+    p {
+        margin: 0.5rem 0 1rem;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            width: 60%;
+            height: 1px;
+            background-color: $text;
+            margin: 0.75rem auto;
+        }
+    }
+
+    .rsvp-button {
+        background-color: $text;
+        color: white;
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            background-color: darken($text, 10%);
+        }
+    }
+}

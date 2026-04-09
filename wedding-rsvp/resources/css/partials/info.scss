@@ -1,0 +1,156 @@
+.wedding-info {
+    padding: 2rem 1rem;
+    color: $text;
+    font-family: $serif-font;
+
+    .info-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+        }
+
+        .info-photo {
+            flex: 1;
+
+            img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+                @media (min-width: 768px) {
+                    max-width: 500px;
+                }
+            }
+        }
+
+        .info-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            p {
+                font-size: 1.1rem;
+                line-height: 1.2;
+            }
+
+            strong {
+                color: $text;
+            }
+
+            em {
+                font-style: italic;
+                color: darken($text, 10%);
+            }
+        }
+    }
+
+    .venue-box {
+        border: 1px solid $text;
+        padding: 1rem;
+        margin-top: 2rem;
+        text-align: center;
+
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: $text;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 25%;
+                height: 1px;
+                background-color: $text;
+                margin: 0.2rem auto;
+            }
+        }
+
+        p {
+            margin: 0.2rem 0;
+        }
+    }
+
+    .schedule-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 2rem;
+        border-top: 1px solid $text;
+        border-left: 1px solid $text;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        > div {
+            border-right: 1px solid $text;
+            border-bottom: 1px solid $text;
+            padding: 0.2rem 1rem;
+
+            h4 {
+                font-size: 1.2rem;
+                margin-top: 0.2rem;
+                margin-bottom: 1rem;
+                color: $text;
+            }
+
+            h4::after {
+                content: "";
+                display: block;
+                width: 15%;
+                height: 1px;
+                background-color: $text;
+                margin: 0.2rem auto;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            &:last-child {
+
+                @media (max-width: 767px) {
+                    border-right: 1px solid $text;
+                }
+            }
+        }
+    }
+
+    .rsvp-info {
+        margin-top: 2rem;
+        text-align: center;
+
+        p {
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 60%;
+                height: 1px;
+                background-color: $text;
+                margin: 0.75rem auto;
+            }
+        }
+
+        .rsvp-button {
+            background-color: $text;
+            color: white;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover {
+                background-color: darken($text, 10%);
+            }
+        }
+    }
+}

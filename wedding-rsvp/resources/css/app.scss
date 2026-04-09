@@ -1,0 +1,58 @@
+@import "variables";
+
+@import "registry";
+@import "checkout";
+@import 'partials/navbar';
+@import 'partials/hero';
+@import 'partials/info';
+@import 'partials/rsvp';
+@import 'partials/admin';
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    font-size: 20px;
+
+    @media (max-width: 600px) {
+        font-size: 18px;
+    }
+}
+
+body {
+    font-family: $serif-font;
+    font-weight: 600;
+    background-color: $background;
+    color: $text;
+}
+
+main.container {
+    margin: auto;
+    padding: 1rem;
+    max-width: 1270px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 24
+}
